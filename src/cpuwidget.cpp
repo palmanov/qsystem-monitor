@@ -244,6 +244,20 @@ CPUWidget::CPUWidget(QWidget* parent) : QWidget(parent) {
   QHBoxLayout* bottom_layout = new QHBoxLayout;
 
   {
+    QVBoxLayout *l = new QVBoxLayout;
+
+    auto cpu_info = parseProcCpuInfo({"siblings"});
+    const auto siblings = cpu_info["siblings"].toInt();
+
+    cores_label_ = new QLabel(QString::number(siblings));
+    cores_label_->setFont(font);
+
+    l->addWidget(new QLabel("CORES"));
+    l->addWidget(cores_label_);
+    bottom_layout->addLayout(l);
+  }
+
+  {
     QVBoxLayout* l = new QVBoxLayout;
     uptime_label_ = new QLabel();
     uptime_label_->setFont(font);

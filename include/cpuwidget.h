@@ -36,6 +36,7 @@ class CPUWidget : public QWidget {
 
   CPUStatsWidget* cpu_stats_widget_;
 
+  QLabel* cores_label_;
   QLabel* uptime_label_;
   QLabel* avg_load_label_;
 };

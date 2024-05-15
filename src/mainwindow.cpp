@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags flags)
 MainWindow::~MainWindow() {}
 
 void MainWindow::initUI() {
+  this->setWindowTitle("QSystemMonitor");
   this->setFixedSize(this->sizeHint());
 
   auto main_widget = new QWidget;
