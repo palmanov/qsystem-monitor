@@ -19,8 +19,7 @@ set(CMAKE_AUTOUIC_SEARCH_PATHS forms)
 # Find the QtWidgets library
 find_package(Qt5 REQUIRED COMPONENTS Core Widgets)
 
-set(headers thirdparty/qroundprogressbar/qroundprogressbar.h 
-            include/abstractmonitor.h
+set(headers include/abstractmonitor.h
             include/cpumonitor.h
             include/cpuwidget.h
             include/loadavgmonitor.h
@@ -29,8 +28,7 @@ set(headers thirdparty/qroundprogressbar/qroundprogressbar.h
             include/ramwidget.h
             include/mainwindow.h)
 
-set(sources thirdparty/qroundprogressbar/qroundprogressbar.cpp 
-            src/cpumonitor.cpp
+set(sources src/cpumonitor.cpp
             src/cpuwidget.cpp
             src/loadavgmonitor.cpp
             src/rammonitor.cpp

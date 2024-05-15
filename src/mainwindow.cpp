@@ -5,16 +5,13 @@
 
 #include "cpumonitor.h"
 #include "loadavgmonitor.h"
-#include "qroundprogressbar/qroundprogressbar.h"
 #include "rammonitor.h"
 #include "uptimemonitor.h"
 
 
 
 MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags flags)
-    : QMainWindow(parent, flags), 
-      cpu_stat_(new QRoundProgressBar),
-      mem_stat_(new QRoundProgressBar), 
+    : QMainWindow(parent, flags),
       threads_label_(new QLabel),
       avg_load_label_(new QLabel),
       uptime_label_(new QLabel) {
@@ -29,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent, Qt::WindowFlags flags)
 MainWindow::~MainWindow() {}
 
 void MainWindow::InitUI() {
-  // this->setFixedSize(393, 284);
+  this->setFixedSize(this->sizeHint());
 
   auto main_widget = new QWidget;
   auto main_layout = new QVBoxLayout;

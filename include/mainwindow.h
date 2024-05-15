@@ -7,7 +7,6 @@
 #include <QResizeEvent>
 
 #include "abstractmonitor.h"
-#include "qroundprogressbar/qroundprogressbar.h"
 
 #include "cpuwidget.h"
 #include "ramwidget.h"
@@ -18,13 +17,7 @@ class MainWindow : public QMainWindow {
   explicit MainWindow(QWidget *parent = nullptr,
                       Qt::WindowFlags flags = Qt::WindowFlags());
   ~MainWindow();
-
- protected:
-  void resizeEvent(QResizeEvent* e) override {
-    QMainWindow::resizeEvent(e);
-    qDebug() << e->size();
-  }
-
+  
  private:
   void InitUI();
   void InitMonitoring();
@@ -32,8 +25,6 @@ class MainWindow : public QMainWindow {
  private:
   QVector<AbstractMonitor*> monitors_;
 
-  QRoundProgressBar* cpu_stat_;
-  QRoundProgressBar* mem_stat_;
   QLabel* threads_label_;
   QLabel* avg_load_label_;
   QLabel* uptime_label_;
