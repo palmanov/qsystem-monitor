@@ -1,9 +1,8 @@
-#include "loadavgmonitor.h"
+#include "info/loadavginfo.h"
 
 #include <QFile>
-#include <QDebug>
 
-void LoadAvgMonitor::process() {
+void LoadAvgInfo::process() {
   QFile file("/proc/loadavg");
   file.open(QFile::ReadOnly);
 

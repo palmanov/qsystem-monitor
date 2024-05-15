@@ -1,9 +1,9 @@
-#include "rammonitor.h"
+#include "info/memoryinfo.h"
 
 #include <QFile>
-#include <QDebug>
+#include <QTextStream>
 
-void RAMMonitor::process() {
+void MemoryInfo::process() {
   uint64_t mem_total = 0;
   uint64_t mem_free = 0;
   uint64_t mem_cached = 0;

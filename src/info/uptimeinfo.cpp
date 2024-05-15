@@ -1,9 +1,8 @@
-#include "uptimemonitor.h"
+#include "info/uptimeinfo.h"
 
 #include <QFile>
-#include <QDebug>
 
-void UptimeMonitor::process() {
+void UptimeInfo::process() {
   uint uptime = 0;
 
   QFile file("/proc/uptime");
